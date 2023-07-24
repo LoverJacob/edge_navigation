@@ -3,7 +3,7 @@ import numpy as np
 from skimage import measure
 
 #Loading the image
-img = cv2.imread('/Users/kukub/Desktop/jeden.png')
+img = cv2.imread('/Users/kukub/Desktop/dwa.png')
 #Converting the image into gray-scale
 img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 cv2.imshow("okno",img)
@@ -11,7 +11,7 @@ cv2.waitKey(0)
 #ret,thresh_img = cv2.threshold(img,127, 255, cv2.THRESH_BINARY)
 
 #Finding edges of the image
-edge_image = cv2.Canny(img,200,50)
+edge_image = cv2.Canny(img,1,200)
 #showing Edged image
 cv2.imshow("okno2",edge_image)
 cv2.waitKey(0)
@@ -27,8 +27,13 @@ k=0
 o=255
 for con in contours:
     cv2.drawContours(img2, contours[i], -1, (50, k, o), 2)
+    x_min = np.min(con,axis=0)
+    x_max = np.max(con,axis=0)
+    y_min = np.min(con,axis=0)
+    y_max = np.max(con,axis=0)
+    print(x_min)
     i+=1
-    k+=10
+    k+=5
     o-=10
 #cv2.drawContours(img2, contours[9], -1, (50, k, o), 2)
 cv2.imshow("okno3",img2)
