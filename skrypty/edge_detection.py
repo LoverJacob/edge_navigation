@@ -11,7 +11,7 @@ cv2.waitKey(0)
 #ret,thresh_img = cv2.threshold(img,127, 255, cv2.THRESH_BINARY)
 
 #Finding edges of the image
-edge_image = cv2.Canny(img,100,300)
+edge_image = cv2.Canny(img,5,150)
 #showing Edged image
 cv2.imshow("okno2",edge_image)
 cv2.waitKey(0)
