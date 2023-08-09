@@ -3,7 +3,7 @@ import numpy as np
 from skimage import measure
 
 #Loading the image
-img = cv2.imread('/Users/kukub/Desktop/dwa.png')
+img = cv2.imread('/Users/Kochan/Desktop/zrzuty/7.jpg')
 #Converting the image into gray-scale
 img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 cv2.imshow("okno",img)
@@ -11,7 +11,7 @@ cv2.waitKey(0)
 #ret,thresh_img = cv2.threshold(img,127, 255, cv2.THRESH_BINARY)
 
 #Finding edges of the image
-edge_image = cv2.Canny(img,5,150)
+edge_image = cv2.Canny(img,100,300)
 #showing Edged image
 cv2.imshow("okno2",edge_image)
 cv2.waitKey(0)
