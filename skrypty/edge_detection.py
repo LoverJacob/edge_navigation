@@ -3,7 +3,7 @@ import numpy as np
 from skimage import measure
 
 #Loading the image
-img = cv2.imread('/Users/Kochan/Desktop/zrzuty/7.jpg')
+img = cv2.imread('/Users/kukub/Desktop/zrzuty/2.png')
 #Converting the image into gray-scale
 img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 cv2.imshow("okno",img)
@@ -11,9 +11,10 @@ cv2.waitKey(0)
 #ret,thresh_img = cv2.threshold(img,127, 255, cv2.THRESH_BINARY)
 
 #Finding edges of the image
-edge_image = cv2.Canny(img,100,300)
+edge_image = cv2.Canny(img,50,200)
 #showing Edged image
 cv2.imshow("okno2",edge_image)
+cv2.imwrite("edge1.png",edge_image)
 cv2.waitKey(0)
 
 # Finding all the lines in an image based on given parameters
@@ -44,3 +45,4 @@ for con in contours:
 cv2.drawContours(img2, contours, -1, (255, 0, 0), 1)
 cv2.imshow("okno3",img2)
 cv2.waitKey(0)
+cv2.imwrite("contour1.png",img2)
