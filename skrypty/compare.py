@@ -39,7 +39,7 @@ real_h = 24 # prawdziwa dlugosc FOV
 cor1 = [] # tablica na obiekty z ramki
 cor2 = [] # tablica na obiekty z kolejnej ramki
 
-# petle szukania wspolrzednych i odrzucania za malych
+# petle szukania wspolrzednych i odrzucania za malych obszarow
 cor1 = find_coordinates(contours1,cor1)
 cor2 = find_coordinates(contours2,cor2)
 
